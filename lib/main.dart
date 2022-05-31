@@ -100,7 +100,7 @@ class _MyHomePageState extends State {
                 ),
                 onPressed: () async {
                   try {
-                    await launch('googlechrome://navigate?url=' + url);
+                    await launchUrl( Uri.parse('googlechrome://navigate?url=' + url), mode: LaunchMode.externalApplication );
                   } catch(e) {
                   }
                 },
@@ -119,7 +119,7 @@ class _MyHomePageState extends State {
                   onPrimary: Colors.white,
                 ),
                 onPressed: () {
-                  launch( url );
+                  launchUrl( Uri.parse(url), mode: LaunchMode.externalApplication );
                 },
                 child: Text(
                   "url_launcher",
